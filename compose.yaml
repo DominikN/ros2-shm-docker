@@ -1,0 +1,9 @@
+services:
+  talker:
+    build: .
+    network_mode: host
+    ipc: host
+    environment:
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/shm-only.xml
+      - USER
+    command: ros2 run demo_nodes_cpp talker
